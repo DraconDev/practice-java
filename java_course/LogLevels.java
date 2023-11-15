@@ -1,15 +1,20 @@
 package java_course;
+
 public class LogLevels {
 
     public static String message(String logLine) {
-        throw new UnsupportedOperationException("Please implement the (static) LogLine.message() method");
+        return logLine.split("\\s", 2)[1].trim();
     }
 
     public static String logLevel(String logLine) {
-        throw new UnsupportedOperationException("Please implement the (static) LogLine.logLevel() method");
+        var logMessage = logLine.split("\\s", 2)[0].trim();
+        return logMessage.toLowerCase().substring(1, logMessage.length() - 2);
     }
 
     public static String reformat(String logLine) {
-        throw new UnsupportedOperationException("Please implement the (static) LogLine.reformat() method");
+        var logMessage = logLine.split("\\s", 2)[0].trim();
+        logMessage = logMessage.toLowerCase().substring(1, logMessage.length() - 2).trim();
+        var result = String.format("%s (%s)", logLine.split("\\s", 2)[1].trim(), logMessage);
+        return result;
     }
 }
