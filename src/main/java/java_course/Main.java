@@ -1,11 +1,7 @@
+package java_course;
 
 // // System.out.println(lasagna.remainingMinutesInOven(30));
 // System.out.println(lasagna.expectedMinutesInOven());
-
-import java.util.Scanner;
-
-import java_course.LogLevels;
-import java_course.SqueakyClean;
 
 public class Main {
 

@@ -16,7 +16,7 @@ public class SqueakyClean {
     }
 
     private static String camelize(String identifier) {
-        var result = identifier.split("[-0-9]");
+        String[] result = identifier.split("[-0-9]");
         if (result.length > 1) {
             for (int i = 1; i < result.length; i++) {
                 if (result[i].length() > 0) {
