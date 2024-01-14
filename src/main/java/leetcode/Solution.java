@@ -2,19 +2,14 @@ package leetcode;
 
 public class Solution {
     public static int maxProfit(int[] prices) {
-        int lsf = Integer.MAX_VALUE;
-        int op = 0;
-        int pist = 0;
+        int min_price = prices[0];
+        int max_profit = 0;
 
-        for(int i = 0; i < prices.length; i++){
-            if(prices[i] < lsf){
-                lsf = prices[i];
-            }
-            pist = prices[i] - lsf;
-            if(op < pist){
-                op = pist;
-            }
+        for (int i = 1; i < prices.length; i++) {
+            max_profit = Math.max(max_profit, prices[i] - min_price);
+            min_price = Math.min(prices[i], min_price);
         }
-        return op;
+
+        return max_profit;
     }
 }
