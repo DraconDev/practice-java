@@ -18,6 +18,16 @@ public class CloseStrings {
             strMap2.put(word2.charAt(i), strMap2.getOrDefault(word2.charAt(i), 0) + 1);
         }
 
+        if (strMap.size() != strMap2.size()) {
+            return false;
+        }
+
+        for (char c : strMap.keySet()) {
+            if (!strMap2.containsKey(c)) {
+                return false;
+            }
+        }
+
         ArrayList<Integer> list = new ArrayList<>();
         for (Integer c : strMap.values()) {
             list.add(c);
@@ -31,5 +41,6 @@ public class CloseStrings {
         list2.sort(null);
 
         return list.equals(list2);
+
     }
 }
